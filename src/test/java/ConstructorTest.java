@@ -4,9 +4,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import PageObject.MainPage;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -15,7 +12,6 @@ public class ConstructorTest {
     private WebDriver driver;
     private static final String BASE_URL = "https://qa-stellarburgers.education-services.ru/";
 
-    private WebDriverWait wait;
     private MainPage mainPage;
 
     @BeforeEach
@@ -24,7 +20,6 @@ public class ConstructorTest {
 
         driver.get(BASE_URL);
         mainPage = new MainPage(driver);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
     @AfterEach
